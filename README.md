@@ -1,11 +1,10 @@
-<h1 align="center">Poc para desenvolvimento API TeraByte</h1>
+<h1 align="center">Integração Asaas</h1>
 
 ## Descrição do Projeto
 <p dir="auto">Esse template foi construido baseado em boas práticas e conceitos que trazem eficiência na hora de codificar e na sua manutenção. Nosso objetivo foi deixar fácil de se implementar o certo e dificil de se implementar o errado.
 
-Nosso propósito foi desenvolver um template que aceita fácil a Mudança onde caso ocorra, não necessite alteração em inumeras outras partes do sistema que não fazem parte do contexto da mudança. Robustez caso uma alteração seja feita não quebre outras partes do sistema inesperadamente. E por último Mobilidade o sistema porporciona fácil reutilização de suas features/camadas, como o software é sempre evolutivo esse ponto é crucial para a facilidade da sua progressão.
-
-Foi proposto para uma resolução genérica, caso seu projeto necessite de uma estrutura específica que o template não proporcione fique a vontade em adicionar</p>
+ Propósito foi desenvolver um template que aceita fácil a Mudança onde caso ocorra, não necessite alteração em inumeras outras partes do sistema que não fazem parte do contexto da mudança. Robustez caso uma alteração seja feita não quebre outras partes do sistema inesperadamente. E por último Mobilidade o sistema porporciona fácil reutilização de suas features/camadas, como o software é sempre evolutivo esse ponto é crucial para a facilidade da sua progressão.
+</p>
 
 ### Pré-requisitos
 
@@ -17,10 +16,10 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 
 ```bash
 # Clone este repositório
-$ git clone <https://github.com/tcommerce/layoutbase-api.git >
+$ git clone <git@github.com:MatheusSodre/api-payment-asaas.git >
 
 # Acesse a pasta do projeto no terminal/cmd
-$ cd layoutbase
+$ cd api-payment-asaas
 
 ```
 
@@ -32,9 +31,9 @@ $ cd layoutbase
     alterar variaveis de ambiente para acessar banco de dados local 
 <ul>
     <li>DB_CONNECTION=mysql</li>
-    <li>DB_HOST=db_micro_01</li>
+    <li>DB_HOST=db_api_assas</li>
     <li>DB_PORT=3306</li>
-    <li>DB_DATABASE=backoffice</li>
+    <li>DB_DATABASE=api-payment-assas</li>
     <li>DB_USERNAME=admin</li>
     <li>DB_PASSWORD=admin</li>
 </ul>
@@ -45,7 +44,7 @@ caso erro ocorra alterar no arquivo
 docker-compose.yml
 
 ports:
-  - 3306:3306
+  - 3399:3306
 
 e atualizar a porta no arquivo .env </p>
 
@@ -58,7 +57,7 @@ e atualizar a porta no arquivo .env </p>
 $ docker-compose up -d --build 
 
 # Entrar na imagem como bash
-$ docker-compose exec micro_01 bash 
+$ docker-compose exec api_assas bash 
 
 # Executar composer instalar dependências do projeto
 $ composer install
@@ -69,7 +68,7 @@ $ php artisan key:generate
 # Gerar migrations 
 $ php artisan migrate
 
-# O servidor inciará na porta:8000 - acesse <http://localhost:8000>
+# O servidor inciará na porta:6060 - acesse <http://localhost:6060>
 
 
 ```
