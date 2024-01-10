@@ -14,13 +14,9 @@ class PaymentController extends Controller
         $this->paymentService = $paymentService;
     }
 
-    public function index()
-    {
-        return "teste";
-    }
-
     public function Store(StoreUpdatePayment $request)
     {
 
+        return $this->paymentService->paymentAsaas($request->all());
     }
 }

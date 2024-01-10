@@ -2,9 +2,9 @@
 
 return [
     'available' => [
-        'assas' => [
-            'url' => env('ASSAS_URL_SANDBOX'),
-            'key' => env('ASSAS_KEY_SANDBOX')
+        'asaas' => [
+            'url' => env('ASAAS_SANDBOX_URL'),
+            'key' => env('ASAAS_SANDBOX_KEY')
         ],
     ]
 ];

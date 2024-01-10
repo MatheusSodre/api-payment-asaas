@@ -29,15 +29,24 @@ $ cd api-payment-asaas
 <p align="left">
     Copiar .env.example e renomiar para .env 
     alterar variaveis de ambiente para acessar banco de dados local 
+    e alterar variaveis de ASAAS com key, url já está com ambiente sandbox
 <ul>
     <li>DB_CONNECTION=mysql</li>
-    <li>DB_HOST=db_api_assas</li>
+    <li>DB_HOST=db_api_asaas</li>
     <li>DB_PORT=3306</li>
-    <li>DB_DATABASE=api-payment-assas</li>
-    <li>DB_USERNAME=admin</li>
+    <li>DB_DATABASE=ApiPayment</li>
+    <li>DB_USERNAME=root</li>
     <li>DB_PASSWORD=admin</li>
 </ul>
     <li>IMPORTANTE VERIFICAR SE PORT ESTÁ SENDO USADO EM ALGUM OUTRO SERVIÇO LOCAL</li>
+
+<ul>
+    <li>ASAAS_SANDBOX_KEY=COLOCAR SUA CHAVE API</li>
+    <li>ASAAS_SANDBOX_URL=https://sandbox.asaas.com/api/v3</li>
+</ul>
+
+
+
 
 caso erro ocorra alterar no arquivo 
 
@@ -57,7 +66,7 @@ e atualizar a porta no arquivo .env </p>
 $ docker-compose up -d --build 
 
 # Entrar na imagem como bash
-$ docker-compose exec api_assas bash 
+$ docker-compose exec api_asaas bash 
 
 # Executar composer instalar dependências do projeto
 $ composer install

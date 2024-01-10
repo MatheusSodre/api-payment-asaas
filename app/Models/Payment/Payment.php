@@ -12,6 +12,7 @@ class Payment extends Model
     protected $fillable = [
         'id_payment',
         'id_customer',
+        'externalReference',
         'billingType',
         'value',
         'netValue',
