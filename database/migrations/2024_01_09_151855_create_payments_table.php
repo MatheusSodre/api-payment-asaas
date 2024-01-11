@@ -13,19 +13,19 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->uuid('uuid');
             $table->string('id_payment');
             $table->string('id_customer');
+            $table->string('externalReference')->nullable();
             $table->string('billingType');
             $table->integer('value');
             $table->integer('netValue');
-            $table->string('bankSlipUrl');
+            $table->string('bankSlipUrl')->nullable();
             $table->string('invoiceUrl')->nullable();
             $table->string('status');
+            $table->string('dueDate');
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      */

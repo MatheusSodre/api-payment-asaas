@@ -34,6 +34,7 @@ class CategoryController extends Controller
      */
     public function store(StoreUpdateCategory $request):JsonResponse
     {
+        dd($this->categoryService->store($request->validated()));
         return Response::json(new CategoryResource($this->categoryService->store($request->validated())),HttpResponse::HTTP_CREATED);
     }
 

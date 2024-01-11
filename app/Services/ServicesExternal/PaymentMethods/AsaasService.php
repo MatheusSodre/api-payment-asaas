@@ -1,5 +1,6 @@
 <?php
 namespace App\Services\ServicesExternal\PaymentMethods;
+use App\Http\Resources\Payment\PaymentResouce;
 use App\Services\ServicesExternal\Interface\PaymentInterface;
 use App\Services\ServicesExternal\Traits\ConsumeExternalService;
 
@@ -30,13 +31,42 @@ class AsaasService implements PaymentInterface {
         ];
         $response = $this->request('post','/payments',$params,$headers);
 
-        return $response->json();
+        return $response;
     }
 
     public function returnData($params)
     {
-        return $params;
+        if($params->successful()) 
+        {
+            return [
+                'mensagem' => 'Pagamento gerado com sucesso',
+                'data'     => $this->data($params->json()),
+                'status'   => $params->status()
+            ];
+        }
+        return [
+            'mensagem' => 'Erro gerar pagamento',
+            'data'     => $params,
+            'status'   => $params->status()
+        ];
     }
 
+    public function data($params)
+    {
+        return [
+            'id_payment' => $params['id'],
+            'id_customer'=> $params['customer'],
+            'externalReference' => $params['externalReference'],
+            'billingType' => $params['billingType'],
+            'value'       => $params['value'],
+            'netValue'    => $params['netValue'],
+            'bankSlipUrl' => isset($params['bankSlipUrl']) ? $params['bankSlipUrl']: null,
+            'invoiceUrl'  => isset($params['invoiceUrl'])  ? $params['invoiceUrl'] : null,
+            'status'  => $params['status'],
+            'dueDate' => $params['dueDate']
+
+        ];
+    }
+    
 }
 ?>

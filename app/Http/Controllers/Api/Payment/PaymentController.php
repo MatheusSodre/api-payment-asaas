@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Api\Payment;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Payment\StoreUpdatePayment;
+use App\Http\Resources\Payment\PaymentCollection;
+use App\Http\Resources\Payment\PaymentResouce;
 use App\Services\Payment\PaymentService;
 use Illuminate\Http\Request;
 
@@ -14,9 +16,13 @@ class PaymentController extends Controller
         $this->paymentService = $paymentService;
     }
 
+    public function index()
+    {
+        return PaymentResouce::collection($this->paymentService->paginate());
+    }
+
     public function Store(StoreUpdatePayment $request)
     {
-
-        return $this->paymentService->paymentAsaas($request->all());
+        return $this->paymentService->paymentAsaas($request->validated());
     }
 }

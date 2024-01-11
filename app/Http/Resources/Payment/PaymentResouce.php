@@ -14,6 +14,15 @@ class PaymentResouce extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        
+        return [
+            'cliente' => $this->id_customer,
+            'url'     => $this->invoiceUrl,
+            'urlBoleto' => $this->bankSlipUrl,
+            'valor'   => $this->value,
+            'status'  => $this->status,
+            'metodo'  => $this->billingType,
+            'dataVencimento' => $this->dueDate
+        ];
     }
 }

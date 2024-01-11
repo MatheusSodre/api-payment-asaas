@@ -21,32 +21,11 @@ class StoreUpdatePayment extends FormRequest
      */
     public function rules(): array
     {
-        $id = $this->category;
         return [
             'customer'    => 'required|min:3|max:255',
             'dueDate'     => 'required|min:3|max:255',
             'value'       => 'required|min:1|max:255',
-            'billingType' => 'required|min:1|max:255',
+            'billingType' => 'required|min:1|max:255'
         ];
     }
 }
-// {
-//     "billingType":"CREDIT_CARD",
-//     "discount":{
-//        "value":10,
-//        "dueDateLimitDays":0
-//     },
-//     "interest":{
-//        "value":2
-//     },
-//     "fine":{
-//        "value":1
-//     },
-//     "customer":"cus_000005842482",
-//     "dueDate":"2024-01-10",
-//     "value":100,
-//     "description":"Pedido 056984",
-//     "daysAfterDueDateToCancellationRegistration":1,
-//     "externalReference":"056984",
-//     "postalService":false
-//  }

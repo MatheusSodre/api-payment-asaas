@@ -38,7 +38,6 @@ $ cd api-payment-asaas
     <li>DB_USERNAME=root</li>
     <li>DB_PASSWORD=admin</li>
 </ul>
-    <li>IMPORTANTE VERIFICAR SE PORT ESTÁ SENDO USADO EM ALGUM OUTRO SERVIÇO LOCAL</li>
 
 <ul>
     <li>ASAAS_SANDBOX_KEY=COLOCAR SUA CHAVE API</li>
