@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('id_customer');
             $table->string('externalReference')->nullable();
             $table->string('billingType');
-            $table->integer('value');
-            $table->integer('netValue');
+            $table->double('value', 8, 2);
+            $table->double('netValue', 8, 2)->nullable();
             $table->string('bankSlipUrl')->nullable();
             $table->string('invoiceUrl')->nullable();
             $table->string('status');

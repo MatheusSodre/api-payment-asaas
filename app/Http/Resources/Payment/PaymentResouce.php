@@ -16,6 +16,7 @@ class PaymentResouce extends JsonResource
     {
         
         return [
+            'id'      => $this->id_payment,
             'cliente' => $this->id_customer,
             'url'     => $this->invoiceUrl,
             'urlBoleto' => $this->bankSlipUrl,

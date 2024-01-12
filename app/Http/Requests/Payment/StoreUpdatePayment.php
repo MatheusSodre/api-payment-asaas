@@ -24,7 +24,7 @@ class StoreUpdatePayment extends FormRequest
         return [
             'customer'    => 'required|min:3|max:255',
             'dueDate'     => 'required|min:3|max:255',
-            'value'       => 'required|min:1|max:255',
+            'value'       => 'required|numeric|regex:/^\d+(\.\d{1,2})?$/',
             'billingType' => 'required|min:1|max:255'
         ];
     }
