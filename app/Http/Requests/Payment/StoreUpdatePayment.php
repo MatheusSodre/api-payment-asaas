@@ -28,4 +28,24 @@ class StoreUpdatePayment extends FormRequest
             'billingType' => 'required|min:1|max:255'
         ];
     }
+    public function messages()
+    {
+        return [
+           'min' => 'Campo deve ter no mínimo :min caracteres',
+           'max' => 'Campo deve ter no maximo :max caracteres',
+           'required' => 'O campo :attribute é obrigatório',
+           'numeric' => 'O campo :attribute é numerico'
+        ];
+    }
+
+    public function attributes()
+    {
+        return [
+            'customer'    => 'nome do cliente',
+            'dueDate'     => 'data de vencimento',
+            'value'       => 'valor',
+            'billingType' => 'forma de pagamento'
+        ];
+    }
+
 }

@@ -30,13 +30,12 @@ class AsaasService implements PaymentInterface {
             "content-type" => "application/json"
         ];
         $response = $this->request('post','/payments',$params,$headers);
-
         return $response;
     }
 
     public function returnData($params)
     {
-        if($params->successful()) 
+        if($params->successful())
         {
             return [
                 'mensagem' => 'Pagamento gerado com sucesso',
@@ -46,7 +45,7 @@ class AsaasService implements PaymentInterface {
         }
         return [
             'mensagem' => 'Erro gerar pagamento',
-            'data'     => $params,
+            'data'     => $params->json(),
             'status'   => $params->status()
         ];
     }
@@ -67,6 +66,6 @@ class AsaasService implements PaymentInterface {
 
         ];
     }
-    
+
 }
 ?>
