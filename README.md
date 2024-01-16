@@ -80,6 +80,19 @@ $ php artisan migrate
 
 
 ```
+<h3 align="center">
+    🚀  Executar Test 
+</h3>
+
+```bash
+
+# Entrar na imagem como bash
+$ docker-compose exec api_asaas bash 
+
+# Executar php artisan test
+$ php artisan test
+
+```
 
 ### 🛠 Tecnologias
 
