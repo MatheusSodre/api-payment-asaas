@@ -41,7 +41,7 @@ class StoreUpdatePayment extends FormRequest
     public function attributes()
     {
         return [
-            'customer'    => 'nome do cliente',
+            'customer'    => 'Id cliente',
             'dueDate'     => 'data de vencimento',
             'value'       => 'valor',
             'billingType' => 'forma de pagamento'
